@@ -42,7 +42,7 @@ func main() {
 			result += " " + list_of_words[int(word2[1])/len(list_of_words)-1]
 		}
 	}
-	//generate random number between 0 and 100 on a new seed
+	//génération d'un nombre aléatoire avec une seed différente à chaque fois
 	rand.Seed(int64(os.Getpid()))
-	println(result, " : ", rand.Intn(1000))
+	println(result, " : ", rand.Intn(1000000000000000000))
 }
