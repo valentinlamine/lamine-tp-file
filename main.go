@@ -26,10 +26,13 @@ func main() {
 			liste_de_mots = append(liste_de_mots, mot)
 		}
 	}
+
 	//premier fragement
 	resultat = liste_de_mots[0]
+
 	//deuxieme fragment
 	resultat += " " + liste_de_mots[len(liste_de_mots)-1]
+
 	//troisieme fragment
 	for index, mot := range liste_de_mots { //parcours la liste de mots
 		if mot == "before" { //on chercher before
@@ -37,6 +40,7 @@ func main() {
 			resultat += " " + liste_de_mots[direction-1]         //on ajoute au résultat
 		}
 	}
+
 	//quatrieme fragment
 	for index, mot := range liste_de_mots { //parcours la liste de mots
 		if strings.Contains(mot, "now") { //si le mot actuel contients les caractère "now"
@@ -44,6 +48,7 @@ func main() {
 			resultat += " " + liste_de_mots[int(mot2[1])/len(liste_de_mots)-1] //on ajoute au résultat le mot à l'indice - 1 de la division entre la valeur ascii du deuxième caractère de mot2 et le nombre total de mot
 		}
 	}
+
 	//cinquième fragement
 	rand.Seed(int64(os.Getpid()))                            //on regénère la seed en se basant sur l'identifiant du processus actuel go
 	println(resultat, " : ", rand.Intn(1000000000000000000)) //on génère un nombre aléatoire
